@@ -33,15 +33,37 @@ const Home = () => {
         })
         canvas.add(circle);
     }
-        
+
+    const makeEllipse = () => {
+        const Ellipse = new fabric.Ellipse({
+            left: 150,
+            top: 150,
+            fill: 'blue ',
+            rx:"250",
+            ry:"100"
+        })
+        canvas.add(Ellipse);
+    }
+
+    const makeTriangle = () => {
+        const Triangle = new fabric.Triangle({
+            left: 250,
+            top: 150,
+            fill: 'green',
+            width: 70,
+            height: 60
+        })
+        canvas.add(Triangle);
+    }
+
     return (
         <div>
             <h1>This is the Heading 1</h1>
             <h3>Choose the Shape you want to make on the Canvas:</h3>
             <button onClick={makeCircle}>Circle</button>
-            <button>Ellipse</button>
+            <button onClick={makeEllipse}>Ellipse</button>
             <button onClick={makeRect}>Rectangle</button>
-            <button>Triangle</button>
+            <button onClick={makeTriangle}>Triangle</button>
             <canvas id="c" />
         </div>
     )
